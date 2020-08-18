@@ -1,0 +1,81 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  display: block;
+  width: 400px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* margin-bottom: 20px; */
+}
+
+.table {
+
+  margin-right: 80px;
+  margin-left: 80px; 
+}
+
+.formik {
+  outline-style: solid;
+  outline-width: thin;
+  outline-color: #e4e4e4;
+  margin-right: 40px;
+  margin-left: 40px;
+  /* margin-top: 10px; */
+  /* margin-bottom: 10px;  */
+  padding: 14px;
+  /* padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 1px;
+  padding-left: 1px; */
+}
+
+.formik-field {
+ /* margin-top: 10px; */
+ padding: 7px 10px;
+ width: 600;
+}
+
+h3 {
+  color: #2085d0
+}
+
+.select-field {
+  width: 400px;
+  /* margin: 10px; */
+}
