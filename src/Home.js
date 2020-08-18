@@ -46,7 +46,7 @@ class Home extends React.Component{
    fetch(getContacts)
    .then(resp => resp.json())
    .then(contacts => {
-    //  console.log(contacts)
+
      this.setState({
        contacts: contacts
      })
@@ -55,7 +55,6 @@ class Home extends React.Component{
 
   render(){
     console.log("user", store.getState().user.id)
-    // console.log(this.state.contacts.filter(contactobj))
     // console.log(logged_in)
     const user = (store.getState().user)
 
