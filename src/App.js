@@ -10,7 +10,7 @@ import ContactPage from './ContactPage';
 import Navbar from './Navbar';
 import Login from './Login';
 import SignUp from './components/SignUp';
-// import TestTable from './TestTable'
+
 import { getCurrentUser, logoutUser } from './actions/user';
 import { Route, Switch } from 'react-router-dom';
 

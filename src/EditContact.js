@@ -4,11 +4,6 @@ import { TextField, Button, Checkbox, Select, MenuItem } from '@material-ui/core
 import { getCurrentUser} from './actions/user';
 import { connect } from 'react-redux';
 import store from './reducers/index'
-// import Home from './Home'
-// import history from './history'
-// import { Link, Redirect } from 'react-router-dom'
-
-
 
 
 const EditContact = (props) => {

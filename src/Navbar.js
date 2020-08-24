@@ -14,9 +14,7 @@ class NavBar extends Component {
   }
 
 
-  render() {
-    // console.log("nav", store.getState().user.id)
-    
+  render() {    
     return (
       <Menu>
         <Menu.Item as={Link} to='/home'>

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { loginUser } from './actions/user';
 import { Form, Button, Grid, Header, Segment, Message } from 'semantic-ui-react';
 
-
 class Login extends Component {
   
   state = {
@@ -22,9 +21,7 @@ class Login extends Component {
     // return <Home user={this.state}/>
   };
 
-
   render() {
-    // const alert = useAlert();
     const { email, password } = this.state;
     return (
       <Grid textAlign='center' verticalAlign='middle'>
@@ -51,15 +48,13 @@ class Login extends Component {
                 onChange={this.handleChange}
               />
               <Button type='submit'>Login</Button>
-
             </Segment>
           </Form>
           <Message>
             Need to Sign Up? <a href='/signup'>Click Here</a>
           </Message>
         </Grid.Column>
-      </Grid>
-        
+      </Grid>  
     );
   }
 }
@@ -69,78 +64,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(null, mapDispatchToProps)(Login);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export class Login extends Component {
-//   constructor(props){
-//     super(props)
-//     this.state = {
-//       email: 'bart.sakowski@gmail.com',
-//       password: 'password'
-//     }
-//   }
-   
-//   handleInputChange = (e) => {
-//     this.setState({
-//       [e.target.name]: e.target.value
-//     })
-//   }
-  
-//   handleSubmit = (e) => {
-//     e.preventDefault()
-
-//     const reqObj = {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//        },
-//       body: JSON.stringify(this.state)
-//     }
-
-//     fetch('http://localhost:3000/api/v1/auth', reqObj)
-//     .then(resp => resp.json())
-//     .then(user => {
-//       // store the jwt tokenin the browser memory (localStorage)
-//       console.log(user)
-//       if (user.error) {
-//         alert(user.error)
-//       } else {
-//         localStorage.setItem('token', user.jwt)
-//         this.props.loginSuccess(user)
-//         this.props.history.push('/home')
-//       }
-//     })
-//   }
-
-//   render() {
-//     console.log(this.props)
-//     return (
-//       <div>
-//         <h3>Sign In</h3>
-//         <form onSubmit={this.handleSubmit}> 
-//           <input name={'email'} onChange={this.handleInputChange} value={this.state.email} />
-//           <input name={'password'} onChange={this.handleInputChange} value={this.state.password} />
-//           <input type='submit' value='login' />
-//         </form>
-//       </div>
-//     ) 
-//   }
-// }
-
-// const mapDispatchToProps ={
-//   loginSuccess
-// }
-
-// export default connect(null, mapDispatchToProps)(Login); 

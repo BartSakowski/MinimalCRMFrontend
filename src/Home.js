@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Table } from 'semantic-ui-react';
+import { Button, Table, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { currentUser } from './actions/auth'
 import store from './reducers/index'
@@ -58,27 +58,23 @@ class Home extends React.Component{
     // console.log(logged_in)
     const user = (store.getState().user)
 
-
-
     const myContacts = this.state.contacts.filter(contact => {
       if (contact.user_id === store.getState().user.id)
         return contact
     })    
 
-    console.log(myContacts)
-
     const { column, direction } = this.state
 
     if (myContacts.length === 0 ) {
+    
       return <h2>You have no contacts, click 'Add Contact' above to add some.</h2>
     }
     
     return (
-      
+
       <div className='table'>
-
+      <h1> Welcome To Minimal CRM </h1>  
       <h3>Contacts</h3><br/>
-
       
       <Table  sortable celled striped >
         <Table.Header>
