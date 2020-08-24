@@ -10,7 +10,7 @@ const EditContact = (props) => {
 
   const contact = props.location.state.contact.contact.id
   const postReq = `http://localhost:3000/contacts/${contact}`;
-  console.log(postReq)
+  console.log(props.location.state)
   const {first_name, last_name, phone_number, email, client_type, transaction_status, referral, referral_agent, referral_office, referral_fee} = props.location.state.contact.contact
   console.log(first_name)
 
@@ -176,11 +176,15 @@ const EditContact = (props) => {
           <div>
             <Button disabled={isSubmitting} type="submit" variant='outlined'>Submit</Button>
           </div>
+          <br></br>
+            <Button variant="outlined">Delete Contact</Button>
+          <div>
+          </div>
 
           </Form >
       )}
       </Formik>
-
+          
     </div>
   );
 }
@@ -191,6 +195,8 @@ const mapDispatchToProps = (dispatch) => {
 
   };
 };
+
+
 
 export default connect(null, mapDispatchToProps)(EditContact);
 

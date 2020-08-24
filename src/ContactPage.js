@@ -32,12 +32,7 @@ class ContactPage extends React.Component{
 
 
   render() {
-    // console.log(this.state.contact)
-    // console.log(this.props)
     console.log(this.props.match.params.contactId)
-    // console.log(this.state.id)
-    // console.log('key', this.props.key)\
-
     return(
       <div style = {{ position: 'right', width: '70vw', height: '70vh' }}>
         <h3>Contact Page</h3>
