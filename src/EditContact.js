@@ -176,10 +176,6 @@ const EditContact = (props) => {
           <div>
             <Button disabled={isSubmitting} type="submit" variant='outlined'>Submit</Button>
           </div>
-          <br></br>
-            <Button variant="outlined">Delete Contact</Button>
-          <div>
-          </div>
 
           </Form >
       )}
