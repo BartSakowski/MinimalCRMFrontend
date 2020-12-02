@@ -3,9 +3,9 @@ import { Formik, Field, Form } from 'formik';
 import { TextField } from '@material-ui/core';
 import { Table, Button } from 'semantic-ui-react';
 import DateFnsUtils from '@date-io/date-fns';
-import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
-import { Datepicker } from 'react-formik-ui';
-import _ from 'lodash'
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import _ from 'lodash';
+
 
 
 export class ContactNotes extends Component {
@@ -102,14 +102,14 @@ export class ContactNotes extends Component {
             }
             </Table.Body>
           </Table>
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
-          <div id="formik-note">
-            <h4>New Note</h4>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <div id="formik-note">
+              <h4>New Note</h4>
               <Formik 
                 enableReinitialize={true}
                 initialValues={{
                 contact_id: contactId,
-                date: '',
+                date: new Date(),
                 body: ''
                 }}
                 onSubmit={(values, { setSubmitting, resetForm }) => {
@@ -141,12 +141,20 @@ export class ContactNotes extends Component {
               >
                 {({ values, isSubmitting })=> (
                   <Form>
-                    <Datepicker
-                      className='date-picker'
+                    <Field
+                      // className='date-picker'
                       name="date"
-                      
-                      placeholder='Date of Note' 
-                      dateFormat='yyyy.MM.dd'
+                      type='date'
+                      variant='outlined'
+                      // variant="inline"
+                      // format="MM/dd/yyyy"
+                      // margin="normal"
+                      // id="date-picker-inline"
+                      // label="Date picker inline"
+                      // placeholder='Date of Note' 
+                      // format="MM/dd/yyyy"
+                      // dateFormat='yyyy.MM.dd'
+                      as={TextField}
                     />
                     <Field
                       className='note-field'
