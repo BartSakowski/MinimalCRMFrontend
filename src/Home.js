@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Table, Header } from 'semantic-ui-react';
+import { Button, Table } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { currentUser } from './actions/auth'
 import store from './reducers/index'
@@ -73,75 +73,74 @@ class Home extends React.Component{
     return (
 
       <div className='table'>
-      <h1> Welcome To Minimal CRM </h1>  
-      <h3>Contacts</h3><br/>
+        <h1> Welcome To Minimal CRM </h1>  
+        <h3>Contacts</h3>
       
-      <Table  sortable celled striped >
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell
-              sorted={column === 'first_name' ? direction : null}
-              onClick={this.handleSort('first_name')}
-            >
-              First Name
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'last_name' ? direction : null}
-              onClick={this.handleSort('last_name')}             
-            >
-              Last Name
-            </Table.HeaderCell>
-            <Table.HeaderCell>Phone Number</Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'email' ? direction : null}
-              onClick={this.handleSort('email')}
-            >
-              Email
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'client_type' ? direction : null}
-              onClick={this.handleSort('client_type')}
-            >
-              Client Type
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'transaction_type' ? direction : null}
-              onClick={this.handleSort('transaction_type')}
-            >
-              Transaction Type
-            </Table.HeaderCell>
-            <Table.HeaderCell
-              sorted={column === 'referral' ? direction : null}
-              onClick={this.handleSort('referral')}
-            >
-              Referral
-            </Table.HeaderCell>
-            <Table.HeaderCell>Click 'View" For More Info</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {
-            this.state.contacts.map(
-              contact => {
-                if (contact.user_id === store.getState().user.id)
-                return(
-                <Table.Row>
-                  <Table.Cell>{contact.first_name}</Table.Cell>
-                  <Table.Cell>{contact.last_name}</Table.Cell>
-                  <Table.Cell>{contact.phone_number}</Table.Cell>
-                  <Table.Cell>{contact.email}</Table.Cell>
-                  <Table.Cell>{contact.client_type}</Table.Cell>
-                  <Table.Cell>{contact.transaction_status}</Table.Cell>
-                  <Table.Cell>{contact.referral ? 'Yes' : 'No'}</Table.Cell>
-                  <Table.Cell> <Button as={Link} to={`/contact/${contact.id}`}>View</Button></Table.Cell> 
-                </Table.Row>
-                );
-              }
-            )
-          }
-        </Table.Body>
-      </Table>
-      {/* </Grid> */}
+        <Table  sortable celled striped >
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell
+                sorted={column === 'first_name' ? direction : null}
+                onClick={this.handleSort('first_name')}
+              >
+                First Name
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'last_name' ? direction : null}
+                onClick={this.handleSort('last_name')}             
+              >
+                Last Name
+              </Table.HeaderCell>
+              <Table.HeaderCell>Phone Number</Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'email' ? direction : null}
+                onClick={this.handleSort('email')}
+              >
+                Email
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'client_type' ? direction : null}
+                onClick={this.handleSort('client_type')}
+              >
+                Client Type
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'transaction_type' ? direction : null}
+                onClick={this.handleSort('transaction_type')}
+              >
+                Transaction Type
+              </Table.HeaderCell>
+              <Table.HeaderCell
+                sorted={column === 'referral' ? direction : null}
+                onClick={this.handleSort('referral')}
+              >
+                Referral
+              </Table.HeaderCell>
+              <Table.HeaderCell>Click 'View" For More Info</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          <Table.Body>
+            {
+              this.state.contacts.map(
+                contact => {
+                  if (contact.user_id === store.getState().user.id)
+                  return(
+                  <Table.Row>
+                    <Table.Cell>{contact.first_name}</Table.Cell>
+                    <Table.Cell>{contact.last_name}</Table.Cell>
+                    <Table.Cell>{contact.phone_number}</Table.Cell>
+                    <Table.Cell>{contact.email}</Table.Cell>
+                    <Table.Cell>{contact.client_type}</Table.Cell>
+                    <Table.Cell>{contact.transaction_status}</Table.Cell>
+                    <Table.Cell>{contact.referral ? 'Yes' : 'No'}</Table.Cell>
+                    <Table.Cell> <Button as={Link} to={`/contact/${contact.id}`}>View</Button></Table.Cell> 
+                  </Table.Row>
+                  );
+                }
+              )
+            }
+          </Table.Body>
+        </Table>
       </div>
       
     )

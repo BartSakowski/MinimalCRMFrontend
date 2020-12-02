@@ -19,22 +19,20 @@ class ContactPage extends React.Component{
     
     const id = this.props.match.params.contactId
     // const getContacts = 'http://localhost:3000/contacts/'
-    fetch(`http://localhost:3000/contacts/${id}`)
-    .then(resp => resp.json())
-    .then(contact =>{
-      this.setState({
-        id: id,
-        contact: contact
+      fetch(`http://localhost:3000/contacts/${id}`)
+      .then(resp => resp.json())
+      .then(contact =>{
+        this.setState({
+          id: id,
+          contact: contact
+        })
       })
-    })
-    }
+    };
   
-
-
   render() {
     console.log(this.props.match.params.contactId)
     return(
-      <div style = {{ position: 'right', width: '70vw', height: '70vh' }}>
+      <div id="contact-page">
         <h3>Contact Page</h3>
           <Grid celled='internally' centered >
             <Grid.Row>

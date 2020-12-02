@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { connect } from 'react-redux';
-
 import Home from './Home';
 import AddContact from './AddContact';
 import EditContact from './EditContact';
@@ -32,9 +31,9 @@ class App extends Component {
       <div className="App">
         <Navbar title="REALTOR CRM" description="Get Ready To NOTATE"/>
         <Switch>
-          <Route path={'/login'} component={Login} />
-          <Route path={'/home'} component={Home} />
-          <Route path={'/signup'} component={SignUp} />
+          <Route path={'/login'} component={Login}/>
+          <Route path={'/home'} component={Home}/>
+          <Route path={'/signup'} component={SignUp}/>
           <Route path={'/addcontact'} component={AddContact}/>
           <Route path={'/contact/:contactId'} component={ContactPage}/>
           <Route path={'/editcontact'} component={EditContact}/>

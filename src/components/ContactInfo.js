@@ -1,26 +1,12 @@
 import React, { Component } from 'react';
-
+import '../App.css';
 import { Button } from 'semantic-ui-react';
+
 import { Link } from 'react-router-dom'
 
 
 
 export class ContactInfo extends Component {
-  
-  
-  // constructor() {
-  //   super()
-  //   this.state ={
-  //     contact: []
-  //   }
-  // }
-
-  // componentDidMount(){
-  //   this.setState()({
-  //     contact: {this.props.contac}
-  //   })
-  // }
-
   
   render() {
     const {first_name, last_name, phone_number, email, client_type, transaction_status, referral, referral_agent, referral_office, referral_fee} = this.props.contact
@@ -28,7 +14,7 @@ export class ContactInfo extends Component {
     // console.log(contact)
 
     return (
-      <div>
+      <div id='contact-info'>
         <h3>Contact Information</h3>
           <div><strong>First Name:</strong> {first_name}</div>
           <div><strong>Last Name:</strong> {last_name}</div>
@@ -43,11 +29,7 @@ export class ContactInfo extends Component {
           <Button variant='outlined' as={Link} to={{
             pathname: '/editcontact',
             state: { contact: {contact} }
-          }} contactEdit={ contact } >Edit Contact</Button>
-
-
-
-
+          }} contactEdit={ contact }>Edit Contact</Button>
       </div>
     )
   }
